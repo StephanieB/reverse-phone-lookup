@@ -47,7 +47,7 @@ With these URLs you can now access :
 
 ### 4. Create database 
 
-Thanks to phpMyAdmin (or from the command line), create this database in Mysql:
+Thanks to phpMyAdmin (or from the command line) create this database in MySQL:
 
 ```
 CREATE DATABASE phone_book CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
