@@ -1,0 +1,18 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}{{ "Modifier"|trans }}{% endblock %}
+
+{% block body %}
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{ "Modifier l'entrée %id%"|trans({'%id%':users_phone.id}) }}</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                {{ include('admin/users_phone/_form.html.twig', {'button_label': 'Modifier'|trans}) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

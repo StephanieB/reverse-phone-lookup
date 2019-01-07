@@ -1,0 +1,32 @@
+{% extends 'search/base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="search-block center-block">
+                <h1 class="site-title page-header text-center">
+                    {{ "Annuaire inversé"|trans }}
+                </h1>
+                <p class="lead text-center">
+                    {% trans %}
+                        Retrouver le numéro d'une personne à partir de son nom ou le nom
+                        à partir d'un numéro grâce à l'annuaire inversé.
+                    {% endtrans %}
+                </p>
+                {{ form_start(form, {'attr': {'class': 'form-horizontal form-label-left'}}) }}
+                {{ form_errors(form) }}
+                <div class="form-group text-center">
+                    {{ form_widget(form.query) }}
+                    {{ form_errors(form.query) }}
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-warning">
+                        {{ button_label|default('Rechercher'|trans) }}
+                    </button>
+                </div>
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

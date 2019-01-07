@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ "Login | Administration"|trans }}</title>
+
+        <link href="{{ asset('gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('gentelella/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('gentelella/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+        <link href="{{ asset('gentelella/css/custom.min.css') }}" rel="stylesheet">
+    </head>
+    <body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    <div class="navbar nav_title" style="border: 0;">
+                        <a href="{{ path('users_phone_index') }}" class="site_title">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ "Administration"|trans }}</span>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br />
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <h3>General</h3>
+                            <ul class="nav side-menu">
+                                <li>
+                                    <a href="{{ path('index_page') }}" title="{{ "Se rendre sur la page d'accueil du site"|trans }}">
+                                        <i class="fa fa-home"></i>
+                                        {{ "Retour à la page d'accueil"|trans }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_col" role="main">
+                <div class="login_wrapper" style="min-height: 700px;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 login_content">
+                        {% if error %}
+                            <div class="alert alert-danger alert-dismissible fade in" style="text-shadow: none;">
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                        <form action="{{ path('login') }}" method="post">
+                            <h1>{{ "Authentification" }}</h1>
+                            <div>
+                                <input type="text" class="form-control" placeholder="{{ "Nom d'utilisateur"|trans }}" id="username" name="_username" value="{{ last_username }}" />
+                            </div>
+                            <div>
+                                <input type="password" class="form-control" placeholder="{{ "Mot de passe"|trans }}" id="password" name="_password" />
+                            </div>
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                            <button class="btn btn-default submit" type="submit">{{ "S'authentifier"|trans }}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="{{ asset('gentelella/vendors/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('gentelella/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('gentelella/vendors/fastclick/lib/fastclick.js') }}"></script>
+        <script src="{{ asset('gentelella/vendors/nprogress/nprogress.js') }}"></script>
+        <script src="{{ asset('gentelella/js/custom.min.js') }}"></script>
+    </body>
+</html>

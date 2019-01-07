@@ -1,0 +1,66 @@
+{% extends 'search/base.html.twig' %}
+
+{% block footer_class %}{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div id="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="navbar-site-title" href="{{ path('index_page') }}" title="{{ "Retourner à la page d'accueil"|trans }}">
+                            <i class="fa fa-book"></i>
+                            {{ "Annuaire inversé"|trans }}
+                        </a>
+                    </li>
+                </ul>
+                {{ form_start(form, {'attr': {'class': 'form-horizontal form-label-left form-inline navbar-form navbar-right'}}) }}
+                {{ form_errors(form) }}
+                    <div class="input-group">
+                        {{ form_widget(form.query) }}
+                        <div class="input-group-btn">
+                            <button class="btn btn-default">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {{ form_errors(form.query) }}
+                {{ form_rest(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row result-block">
+            <h1 class="page-header">
+                {{ "Resultat de la recherche '%query%'"|trans({'%query%':query}) }}
+            </h1>
+            {% if result is empty %}
+                <p class="lead">
+                    {{ 'Aucun résulat ne correspond à cette recherche'|trans }}
+                </p>
+            {% else %}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>{{ "Nom"|trans }}</th>
+                            <th>{{ "Téléphone"|trans }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% set i = 1 %}
+                        {% for user in result %}
+                            <tr>
+                                <td>{{ i }}</td>
+                                <td>{{ user.name }}</td>
+                                <td>{{ user.phone }}</td>
+                            </tr>
+                            {% set i = i+1 %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

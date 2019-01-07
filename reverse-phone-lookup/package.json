@@ -1,0 +1,20 @@
+{
+  "name": "reverse-phone-lookup",
+  "version": "1.0.0",
+  "author": "Stephanie Goulet",
+  "description": "A reverse phone lookup",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/StephanieB/reverse-phone-lookup"
+  },
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-cache": "^1.0.2",
+    "gulp-cli": "^2.0.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

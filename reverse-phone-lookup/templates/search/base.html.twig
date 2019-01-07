@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{{ "Annuaire inversé en ligne"|trans }}{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('gentelella/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('gentelella/vendors/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('gentelella/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/style.min.css') }}" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        <footer class="navbar navbar-default {% block footer_class %}navbar-fixed-bottom{% endblock %}">
+            <div class="container text-center">
+                <p class="navbar-text" style="float: none;">
+                    2019 -
+                    {{ 'Voir le code source sur' |trans }}
+                    <a href="https://github.com/StephanieB/reverse-phone-lookup" class="navbar-link">
+                        <u>{{ "Github"|trans }}</u>
+                    </a> -
+                    <a class="navbar-link" href="{{ path('login') }}" title="{{ "Se connecter au backoffice"|trans }}">
+                        <u>{{ "Se connecter au backoffice"|trans }}</u>
+                    </a>
+                </p>
+            </div>
+        </footer>
+        {% block javascripts %}
+            <script src="{{ asset('gentelella/vendors/jquery/dist/jquery.min.js') }}"></script>
+            <script src="{{ asset('gentelella/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('gentelella/vendors/fastclick/lib/fastclick.js') }}"></script>
+            <script src="{{ asset('gentelella/vendors/nprogress/nprogress.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

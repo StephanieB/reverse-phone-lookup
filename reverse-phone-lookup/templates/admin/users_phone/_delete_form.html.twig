@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('users_phone_delete', {'id': users_phone.id}) }}" onsubmit="return confirm('{{ "Êtes vous sûr de vouloir supprimer cette entrée?"|trans }}');" style="display: inline;">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ users_phone.id) }}">
+    <button class="btn btn-danger btn-xs">{{ "Supprimer"|trans }}</button>
+</form>
