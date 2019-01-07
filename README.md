@@ -1,4 +1,4 @@
-#Install the project with Docker
+# Install the project with Docker
 
 ## Requirements
 
@@ -12,13 +12,13 @@ For this, you can read the documentation here :
 
 ## Project installation
 
-### Clone the project :
+### 1. Clone the project :
 
 ```
 git@github.com:StephanieB/reverse-phone-lookup.git
 ```
 
-### Execute docker-compose.yml
+### 2. Execute docker-compose.yml
 
 At the root of the project, launch this command :
 
@@ -33,7 +33,7 @@ Docker will install an environment with:
 - phpMyAdmin
 - Node (the last version)
 
-### Project access
+### 3. Project access
 
 With these URLs you can now access :
 - the project : http://localhost:8000/
@@ -45,7 +45,7 @@ With these URLs you can now access :
     - Username: root
     - Password: root
 
-### Create database 
+### 4. Create database 
 
 Thanks to phpMyAdmin (or from the command line), create this database in Mysql:
 
@@ -53,21 +53,21 @@ Thanks to phpMyAdmin (or from the command line), create this database in Mysql:
 CREATE DATABASE phone_book CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
-### Create the tables
+### 5. Create the tables
 
 To create the table in the database you can do this : 
 ```
 docker-compose exec php bin/console doctrine:migrations:migrate
 ```
 
-### First data
+### 6. First data
 
 To create the first data in the database you can do this : 
 ```
 docker-compose exec php bin/console doctrine:fixtures:load
 ```
 
-### Enjoy
+### 7. Enjoy
 
 Now in the website, you can search for exemple : 06, be, william, ... and you can see the result.
 You can also read, create, update, delete the data from the backoffice.
