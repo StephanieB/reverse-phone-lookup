@@ -1,3 +1,10 @@
+html {
+  height: 100%;
+  body {
+    min-height: 100%;
+    position: relative;
+  }
+}
 nav {
   &.navbar-default {
     border: 0;
@@ -47,6 +54,7 @@ nav {
 .search-block {
   width: 60%;
   margin-top: 89px;
+  padding-bottom: 52px;
 
   .site-title {
     padding-top:109px;
@@ -62,8 +70,8 @@ nav {
 }
 
 .result-block {
-  min-height: 600px;
-  padding: 0 10px 0 10px;
+  padding: 0 10px 52px 10px;
+  min-height: 400px;
   .table {
     margin-top: 55px;
     thead {
@@ -79,6 +87,10 @@ nav {
 footer {
   &.navbar{
     margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     &.navbar-default {
       .navbar-link {
         color: black;

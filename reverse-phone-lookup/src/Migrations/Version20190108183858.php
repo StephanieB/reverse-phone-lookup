@@ -8,7 +8,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190105183210 extends AbstractMigration
+final class Version20190108183858 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {

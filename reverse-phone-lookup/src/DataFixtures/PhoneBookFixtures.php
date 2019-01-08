@@ -16,7 +16,7 @@ class PhoneBookFixtures extends Fixture
         $data = [
             [
                 'name' => 'bellone',
-                'phone' => '0609322191'
+                'phone' => '0608522681'
             ],
             [
                 'name' => 'goulet',

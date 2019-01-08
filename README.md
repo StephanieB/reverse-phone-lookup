@@ -50,7 +50,7 @@ With these URLs you can now access :
 Thanks to phpMyAdmin (or from the command line) create this database in MySQL:
 
 ```
-CREATE DATABASE phone_book CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+docker-compose exec php bin/console doctrine:database:create
 ```
 
 ### 5. Create the tables
@@ -74,7 +74,7 @@ You can also read, create, update, delete the data from the backoffice.
 
 ## Solution without installation
 
-You can also see the project directly from this URL :
+You can also see the project directly from this URL : http://test.lecalepinpinpin.fr
 
 
 
