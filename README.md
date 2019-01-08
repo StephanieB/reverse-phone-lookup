@@ -67,6 +67,16 @@ To create the first data in the database you can do this :
 docker-compose exec php bin/console doctrine:fixtures:load
 ```
 
+The first data is these :
+```
+bellone / 0608522681
+goulet / 0709322192
+dupond / 0102030405
+martin / 0101030409
+michel / 0490570409
+william / 0292273056
+```
+
 ### 7. Enjoy
 
 Now in the website, you can search for exemple : 06, be, william, ... and you can see the result.
